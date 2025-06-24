@@ -1,0 +1,5 @@
+# 排除 macOS 系统文件
+.DS_Store
+
+# 排除 VitePress 缓存
+.vitepress/cache

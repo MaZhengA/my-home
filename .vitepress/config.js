@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: '铮霄驿', // 站点标题
   description: '这是一个基于 VitePress 的个人博客', // 站点描述
+  base: '/my-home/',
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
