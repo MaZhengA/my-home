@@ -30,4 +30,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .vitepress/dist  # 构建产物目录
           publish_branch: gh-pages           # 部署到专用分支
-          # 移除 destination_dir，构建产物直接放根目录
