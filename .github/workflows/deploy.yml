@@ -3,36 +3,31 @@ name: Deploy to GitHub Pages on Main Branch
 on:
   push:
     branches:
-      - main # 触发条件：当 main 分支有推送时触发
+      - main # 代码推送到 main 分支时触发
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: 检出代码
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: 设置 Node.js 环境
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # 使用 Node.js 18（可以根据需要调整版本）
+          node-version: 18
 
-      # Step 3: 安装依赖
       - name: Install dependencies
         run: npm install
 
-      # Step 4: 构建项目
       - name: Build project
         run: npm run docs:build
 
-      # Step 5: 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 提供的默认 token
-          publish_dir: docs/.vitepress/dist               # 构建后的静态文件目录
-          publish_branch: main                      # 将静态文件推送到 main 分支
-          destination_dir: docs      # 将静态文件放入 docs 子目录
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .vitepress/dist  # 构建产物目录
+          publish_branch: gh-pages           # 部署到专用分支
+          # 移除 destination_dir，构建产物直接放根目录
