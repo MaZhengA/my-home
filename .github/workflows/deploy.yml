@@ -22,16 +22,16 @@ jobs:
 
       # Step 3: 安装依赖
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       # Step 4: 构建项目
       - name: Build project
-        run: pnpm docs:build
+        run: npm run docs:build
 
       # Step 5: 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} # 使用 GitHub 提供的默认 token
-          publish_dir: .vitepress/dist               # 构建后的静态文件目录
+          publish_dir: docs/.vitepress/dist               # 构建后的静态文件目录
           publish_branch: main                      # 将静态文件推送到 main 分支
