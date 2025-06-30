@@ -3,3 +3,6 @@
 
 # 排除 VitePress 缓存
 .vitepress/cache
+
+# 文章
+文章.md
