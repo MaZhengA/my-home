@@ -1,0 +1,1 @@
+import{_ as a,c as t,o as r,ae as o}from"./chunks/framework.DqZvsvSA.js";const d=JSON.parse('{"title":"my-home","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),n={name:"README.md"};function m(h,e,s,_,i,l){return r(),t("div",null,e[0]||(e[0]=[o("",4)]))}const p=a(n,[["render",m]]);export{d as __pageData,p as default};
